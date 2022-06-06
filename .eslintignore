@@ -1,4 +1,4 @@
-# The build artifacts of the lib-jiti-meet project.
+# The build artifacts of the lib-confab project.
 lib-confab.*
 dist/
 types/
