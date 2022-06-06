@@ -1,0 +1,4 @@
+lib-confab.min.js -text -diff
+lib-confab.js -text -diff
+lib-confab.js.map -text -diff
+text eol=lf

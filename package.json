@@ -1,0 +1,96 @@
+{
+  "name": "lib-confab",
+  "version": "0.0.0",
+  "description": "JS library for accessing Confab server side deployments",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/confabbox/lib-confab"
+  },
+  "keywords": [
+    "jingle",
+    "webrtc",
+    "xmpp",
+    "browser",
+    "confab"
+  ],
+  "author": "",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "sdp-interop": "github:confabbox/sdp-interop",
+    "sdp-simulcast": "github:confabbox/sdp-simulcast",
+    "async": "3.2.3",
+    "base64-js": "1.3.1",
+    "current-executing-script": "0.1.3",
+    "js-utils": "github:confabbox/js-utils",
+    "lodash.clonedeep": "4.5.0",
+    "lodash.debounce": "4.0.8",
+    "lodash.isequal": "4.5.0",
+    "logger": "github:confabbox/logger",
+    "promise.allsettled": "1.0.4",
+    "sdp-transform": "2.3.0",
+    "strophe.js": "1.3.4",
+    "strophejs-plugin-disco": "0.0.2",
+    "strophejs-plugin-stream-management": "github:confabbox/strophejs-plugin-stream-management",
+    "uuid": "8.1.0",
+    "webrtc-adapter": "8.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/eslint-parser": "7.16.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "7.16.7",
+    "@types/async": "3.2.12",
+    "@types/jasmine": "3.10.3",
+    "@types/sdp-transform": "2.4.5",
+    "babelify": "^10.0.0",
+    "babel-loader": "8.2.3",
+    "browserify": "^16.2.3",
+    "core-js": "3.19.1",
+    "eslint": "8.1.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-require-path-exists": "^1.1.9",
+    "jasmine-core": "3.5.0",
+    "karma": "6.3.16",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-jasmine": "3.1.1",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "5.0.0",
+    "process": "0.11.10",
+    "string-replace-loader": "3.0.3",
+    "typescript": "4.3.5",
+    "webpack": "5.57.1",
+    "webpack-bundle-analyzer": "4.4.2",
+    "webpack-cli": "4.9.0"
+  },
+  "scripts": {
+    "build": "export LIB_CONFAB_COMMIT_HASH=$(git rev-parse --short HEAD 2>/dev/null) && webpack && tsc --build --clean && tsc",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "prepack": "npm run build",
+    "test": "karma start karma.conf.js",
+    "test-watch": "karma start karma.conf.js --no-single-run",
+    "validate": "npm ls",
+    "watch": "webpack --config webpack.config.js --watch --mode development"
+  },
+  "browser": "dist/umd/lib-confab.min.js",
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
+  },
+  "module": "dist/esm/ConfabMeetJS.js",
+  "files": [
+    "dist",
+    "types",
+    "connection_optimization/external_connect.js",
+    "modules/browser/capabilities.json"
+  ],
+  "license": "Apache-2.0"
+}
