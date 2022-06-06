@@ -19,7 +19,7 @@
  * @property {boolean} webrtcIceUdpDisable - Described in the config.js[1].
  * @property {boolean} webrtcIceTcpDisable - Described in the config.js[1].
  *
- * 
+ *
  */
 /**
  *
@@ -686,8 +686,6 @@ export type JingleSessionPCOptions = {
     webrtcIceUdpDisable: boolean;
     /**
      * - Described in the config.js[1].
-     *
-     * 
      */
     webrtcIceTcpDisable: boolean;
 };
